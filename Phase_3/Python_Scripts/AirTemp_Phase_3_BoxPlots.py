@@ -69,10 +69,10 @@ def create_temp_boxplots(deck_df, sensor_columns, deck_name):
 
         # Plot the threshold line and outside temperature on top of the box plot
         ax.plot(deck_df['Datetime'].dt.strftime('%d.%m.%y').unique(),
-                deck_df.groupby(deck_df['Datetime'].dt.strftime('%d.%m.%y'))['Tic_Threshold'].mean(),
+                deck_df.groupby(deck_df['Datetime'].dt.date)['Tic_Threshold'].mean(),
                 'g--', label='Tic threshold as per EN 14750-1', zorder=10)
         ax.plot(deck_df['Datetime'].dt.strftime('%d.%m.%y').unique(),
-                deck_df.groupby(deck_df['Datetime'].dt.strftime('%d.%m.%y'))['HVAC_OutsideTemp_value'].mean(),
+                deck_df.groupby(deck_df['Datetime'].dt.date)['HVAC_OutsideTemp_value'].mean(),
                 'r--', label='Outside Temperature', zorder=5)
 
         ax.set_title(f'Temperature Variation CDSK - {col}', fontsize=12)
