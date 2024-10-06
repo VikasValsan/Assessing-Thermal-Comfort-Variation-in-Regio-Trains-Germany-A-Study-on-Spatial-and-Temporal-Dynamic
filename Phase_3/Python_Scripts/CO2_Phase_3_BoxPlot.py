@@ -6,7 +6,7 @@ from tkinter.filedialog import askopenfilename
 
 # Function to calculate CO2 threshold based on temperature
 def calculate_co2_threshold(temp):
-    if 5 <= temp <= 26:
+    if -5 <= temp <= 26:
         return 1275
     else:
         return 1600
