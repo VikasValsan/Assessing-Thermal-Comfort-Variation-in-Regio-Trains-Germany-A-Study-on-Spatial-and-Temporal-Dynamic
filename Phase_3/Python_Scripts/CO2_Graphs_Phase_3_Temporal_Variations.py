@@ -34,7 +34,7 @@ for column in columns_to_clean:
 def co2_threshold_corrected(Tem):
     if -15 <= Tem <= -5:
         return 1600
-    elif 5 < Tem <= 26:
+    elif -5 < Tem <= 26:
         return 1275
     else:
         return 1600
